@@ -29,6 +29,13 @@ export PATH="$HOME/.local/bin":$PATH
 # bindings
 bindkey -s '^x' '^usource ~/.zshrc\n'
 
+# aliases
+alias cl="clear"
+alias lsa="ls -a"
+alias g="git"
+alias q="exit"
+alias sourceZsh="source ~/.zshrc"
+
 compinit
 
 # ls colors
