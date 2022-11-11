@@ -1,6 +1,6 @@
 # completions
 autoload -Uz compinit
-zstyle ':completion:*' menu select
+zstyle ':completion:*' menu yes select
 zmodload zsh/complist
 _comp_options+=(globdots)		# Include hidden files.
 zle_highlight=('paste:none')
@@ -28,7 +28,8 @@ export PATH="$HOME/.local/bin":$PATH
 
 # bindings
 bindkey -s '^x' '^usource ~/.zshrc\n'
-
+bindkey -M menuselect '?' history-incremental-search-forward
+bindkey -M menuselect '/' history-incremental-search-backward
 compinit
 
 # ls colors
