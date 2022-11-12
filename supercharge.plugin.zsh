@@ -13,6 +13,11 @@ setopt MENU_COMPLETE
 setopt EXTENDED_GLOB
 setopt INTERACTIVE_COMMENTS
 setopt APPEND_HISTORY
+# persistent history 
+HISTSIZE=10000
+SAVEHIST=10000
+HISTFILE=~/.cache/zshhistory
+
 # setopt interactive_comments
 
 autoload -U up-line-or-beginning-search
