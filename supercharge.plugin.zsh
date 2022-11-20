@@ -1,5 +1,6 @@
 # completions
 autoload -Uz compinit
+autoload -Uz plug
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
 zmodload zsh/complist
