@@ -1,6 +1,7 @@
 # completions
 autoload -Uz compinit
 zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
 zmodload zsh/complist
 _comp_options+=(globdots)		# Include hidden files.
 zle_highlight=('paste:none')
@@ -14,7 +15,7 @@ setopt EXTENDED_GLOB
 setopt INTERACTIVE_COMMENTS
 setopt APPEND_HISTORY
 
-HISTFILE="$ZDOTDIR/.zsh_history"
+HISTFILE="${ZDOTDIR:-$HOME}/.zsh_history"
 HISTSIZE=10000000
 SAVEHIST=10000000
 setopt BANG_HIST                 # Treat the '!' character specially during expansion.
@@ -42,7 +43,7 @@ autoload -Uz colors && colors
 export PATH="$HOME/.local/bin":$PATH
 
 # bindings
-bindkey -s '^x' '^usource ~/.zshrc\n'
+bindkey -s '^x' '^usource ${ZDOTDIR:-$HOME}/.zshrc\n'
 
 compinit
 
