@@ -1,11 +1,16 @@
 # completions
-autoload -Uz compinit
 autoload -Uz plug
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
 zmodload zsh/complist
 _comp_options+=(globdots)		# Include hidden files.
 zle_highlight=('paste:none')
+autoload -Uz compinit
+if [ $(date +'%j') != $(/usr/bin/stat -f '%Sm' -t '%j' ${ZDOTDIR:-$HOME}/.zcompdump) ]; then
+  compinit
+else
+  compinit -C
+fi
 
 unsetopt BEEP
 setopt AUTO_CD
