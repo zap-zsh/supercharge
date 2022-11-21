@@ -5,12 +5,12 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
 zmodload zsh/complist
 _comp_options+=(globdots)		# Include hidden files.
 zle_highlight=('paste:none')
+
 autoload -Uz compinit
-if [ $(date +'%j') != $(/usr/bin/stat -f '%Sm' -t '%j' ${ZDOTDIR:-$HOME}/.zcompdump) ]; then
+for dump in "${ZDOTDIR:-$HOME}/.zcompdump"(N.mh+24); do
   compinit
-else
-  compinit -C
-fi
+done
+compinit -C
 
 unsetopt BEEP
 setopt AUTO_CD
@@ -51,7 +51,7 @@ export PATH="$HOME/.local/bin":$PATH
 # bindings
 bindkey -s '^x' '^usource ${ZDOTDIR:-$HOME}/.zshrc\n'
 
-compinit
+# compinit
 
 # ls colors
 case "$(uname -s)" in
