@@ -1,22 +1,12 @@
-# completions
-
 autoload -Uz plug
 
-
-
+# completions
 autoload -Uz compinit
-
 zstyle ':completion:*' menu yes select
-
-
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
-
-
 zmodload zsh/complist
 _comp_options+=(globdots)		# Include hidden files.
 zle_highlight=('paste:none')
-
-autoload -Uz compinit
 for dump in "${ZDOTDIR:-$HOME}/.zcompdump"(N.mh+24); do
   compinit
 done
@@ -32,8 +22,8 @@ setopt INTERACTIVE_COMMENTS
 setopt APPEND_HISTORY
 
 HISTFILE="${ZDOTDIR:-$HOME}/.zsh_history"
-HISTSIZE=10000000
-SAVEHIST=10000000
+HISTSIZE=50000
+SAVEHIST=50000
 setopt BANG_HIST                 # Treat the '!' character specially during expansion.
 setopt EXTENDED_HISTORY          # Write the history file in the ":start:elapsed;command" format.
 setopt INC_APPEND_HISTORY        # Write to the history file immediately, not when the shell exits.
@@ -59,16 +49,9 @@ autoload -Uz colors && colors
 export PATH="$HOME/.local/bin":$PATH
 
 # bindings
-
 bindkey -s '^x' '^usource ${ZDOTDIR:-$HOME}/.zshrc\n'
-
-
-
 bindkey -M menuselect '?' history-incremental-search-forward
 bindkey -M menuselect '/' history-incremental-search-backward
-
-
-
 
 # compinit
 
