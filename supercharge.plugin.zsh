@@ -27,7 +27,7 @@ autoload -Uz colors && colors
 export PATH="$HOME/.local/bin":$PATH
 
 # bindings
-bindkey -s '^x' '^usource ~/.zshrc\n'
+bindkey -s '^x' '^usource $ZDOTDIR/.zshrc\n'
 
 compinit
 
