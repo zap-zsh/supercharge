@@ -1,6 +1,11 @@
 # completions
 autoload -Uz compinit
+
 zstyle ':completion:*' menu yes select
+
+
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
+
 zmodload zsh/complist
 _comp_options+=(globdots)		# Include hidden files.
 zle_highlight=('paste:none')
@@ -18,7 +23,7 @@ setopt APPEND_HISTORY
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
 zle -N up-line-or-beginning-search
-zle -N down-line-or-beginning-search
+zle -N down-lr-beginning-search
 
 # Colors
 autoload -Uz colors && colors
@@ -27,9 +32,14 @@ autoload -Uz colors && colors
 export PATH="$HOME/.local/bin":$PATH
 
 # bindings
-bindkey -s '^x' '^usource ~/.zshrc\n'
+
+
 bindkey -M menuselect '?' history-incremental-search-forward
 bindkey -M menuselect '/' history-incremental-search-backward
+
+bindkey -s '^x' '^usource $ZDOTDIR/.zshrc\n'
+
+
 compinit
 
 # ls colors
