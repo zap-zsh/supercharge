@@ -1,7 +1,17 @@
 # completions
+
 autoload -Uz plug
-zstyle ':completion:*' menu select
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
+
+
+
+autoload -Uz compinit
+
+zstyle ':completion:*' menu yes select
+
+
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
+
+
 zmodload zsh/complist
 _comp_options+=(globdots)		# Include hidden files.
 zle_highlight=('paste:none')
@@ -49,7 +59,16 @@ autoload -Uz colors && colors
 export PATH="$HOME/.local/bin":$PATH
 
 # bindings
+
 bindkey -s '^x' '^usource ${ZDOTDIR:-$HOME}/.zshrc\n'
+
+
+
+bindkey -M menuselect '?' history-incremental-search-forward
+bindkey -M menuselect '/' history-incremental-search-backward
+
+
+
 
 # compinit
 
