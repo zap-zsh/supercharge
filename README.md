@@ -12,3 +12,6 @@ Options to supercharge your zsh experience
 
 - Auto Color LS<BR>
 ![2022-11-10-22:00:31](https://user-images.githubusercontent.com/696094/201253556-cd469d4b-1ce1-412d-8ba7-da234c1e79cc.png)
+
+### ⚠️ Note:
+If you wish to use also [zap-zsh/exa](https://github.com/zap-zsh/exa) make sure **exa** is loaded **after** this plugin. Take a look at [this issue](https://github.com/zap-zsh/exa/issues/3)
