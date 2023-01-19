@@ -7,10 +7,14 @@ zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=
 zmodload zsh/complist
 _comp_options+=(globdots)		# Include hidden files.
 zle_highlight=('paste:none')
-for dump in "${ZDOTDIR:-$HOME}/.zcompdump"(N.mh+24); do
+
+_comp_files=(${ZDOTDIR:-$HOME}/.zcompdump(N.mh+24))
+if [[ -n $_comp_files ]]; then
   compinit
-done
-compinit -C
+  touch ${ZDOTDIR:-$HOME}/.zcompdump
+else
+  compinit -C
+fi
 
 unsetopt BEEP
 setopt AUTO_CD
