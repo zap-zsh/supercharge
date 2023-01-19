@@ -15,6 +15,7 @@ if [[ -n $_comp_files ]]; then
 else
   compinit -C
 fi
+unset _comp_files
 
 unsetopt BEEP
 setopt AUTO_CD
