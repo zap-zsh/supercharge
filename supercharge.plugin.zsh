@@ -46,7 +46,7 @@ zle -N down-line-or-beginning-search
 autoload -Uz colors && colors
 
 # exports
-export PATH="$HOME/.local/bin:$PATH"
+# export PATH="$HOME/.local/bin:$PATH"
 
 # bindings
 bindkey -s '^x' '^usource ${ZDOTDIR:-$HOME}/.zshrc\n'
