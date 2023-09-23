@@ -49,7 +49,7 @@ autoload -Uz colors && colors
 export PATH="$HOME/.local/bin:$PATH"
 
 # bindings
-bindkey -s '^x' '^usource ${ZDOTDIR:-$HOME}/.zshrc\n'
+bindkey -s '^x' '^usource $ZSHRC\n'
 bindkey -M menuselect '?' history-incremental-search-forward
 bindkey -M menuselect '/' history-incremental-search-backward
 
