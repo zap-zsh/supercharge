@@ -15,7 +15,7 @@ Options to supercharge your zsh experience
 
 - <kbd>CTRL</kbd>+<kbd>x</kbd> reload your `.zshrc` file. If you wish to disable that feature run the following command
 ```zsh
-sed -i '53 s/^/#/' $ZAP_PLUGIN_DIR/supercharge/supercharge.plugin.zsh
+sed -i '52 s/^/#/' $ZAP_PLUGIN_DIR/supercharge/supercharge.plugin.zsh
 ```
 
 
