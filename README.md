@@ -13,7 +13,7 @@ Options to supercharge your zsh experience
 - Auto Color LS<BR>
 ![2022-11-10-22:00:31](https://user-images.githubusercontent.com/696094/201253556-cd469d4b-1ce1-412d-8ba7-da234c1e79cc.png)
 
-- <kbd>CTRL</kbd>+<kbd>x</kbd> reload your `.zshrc` file.<BR>If you wish to disable that feature run the following command. Also consider express your thought to #15
+- <kbd>CTRL</kbd>+<kbd>x</kbd> reload your `.zshrc` file.<BR>If you wish to disable that feature run the following command. Also consider express your thought to [#15](https://github.com/zap-zsh/supercharge/issues/15)
 ```zsh
 sed -i '52 s/^/#/' $ZAP_PLUGIN_DIR/supercharge/supercharge.plugin.zsh
 ```
