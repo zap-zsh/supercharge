@@ -52,6 +52,7 @@ export PATH="$HOME/.local/bin:$PATH"
 bindkey -s '^x' '^usource $ZSHRC\n'
 bindkey -M menuselect '?' history-incremental-search-forward
 bindkey -M menuselect '/' history-incremental-search-backward
+bindkey '^H' backward-kill-word # Ctrl + Backspace to delete a whole word.
 
 # compinit
 
