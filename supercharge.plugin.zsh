@@ -8,9 +8,9 @@ zmodload zsh/complist
 _comp_options+=(globdots)		# Include hidden files.
 zle_highlight=('paste:none')
 for dump in "${ZDOTDIR:-$HOME}/.zcompdump"(N.mh+24); do
-  compinit
-done
-compinit -C
+	compinit -d "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zcompdump"
+	done
+compinit -C -d "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zcompdump"
 
 unsetopt BEEP
 setopt AUTO_CD
